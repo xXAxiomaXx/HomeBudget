@@ -55,11 +55,12 @@ const router = createBrowserRouter([
   },
 ]);
 function App() {
-  <Analytics />;
+  
   return (
     <div className="App">
       <RouterProvider router={router} />
       <ToastContainer />
+      <Analytics />;
     </div>
   );
 }
