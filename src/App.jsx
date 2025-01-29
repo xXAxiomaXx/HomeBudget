@@ -3,10 +3,14 @@ import Dashboard, { dashboardAction, dashboardLoader } from "./pages/Dashboard";
 import Error from "./pages/Error";
 import Main, { mainLoader } from "./layouts/Main";
 import { logoutAction } from "./actions/Logout";
-import { ToastContainer } from 'react-toastify';
-import ExpensesPage, { expensesAction, expensesLoader } from "./pages/ExpensesPage";
+import { ToastContainer } from "react-toastify";
+import ExpensesPage, {
+  expensesAction,
+  expensesLoader,
+} from "./pages/ExpensesPage";
 import BudgetPage, { budgetAction, budgetLoader } from "./pages/BudgetPage";
 import { deleteBudget } from "./actions/deleteBudget";
+import { Analytics } from "@vercel/analytics/react";
 // import 'react-toastify/dist/ReactToastify.css';
 
 const router = createBrowserRouter([
@@ -33,8 +37,8 @@ const router = createBrowserRouter([
           {
             path: "delete",
             action: deleteBudget,
-          }
-        ]
+          },
+        ],
       },
       {
         path: "expenses",
@@ -46,11 +50,12 @@ const router = createBrowserRouter([
       {
         path: "logout",
         action: logoutAction,
-      }
+      },
     ],
   },
 ]);
 function App() {
+  <Analytics />;
   return (
     <div className="App">
       <RouterProvider router={router} />
