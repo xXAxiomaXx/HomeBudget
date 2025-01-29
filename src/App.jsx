@@ -60,7 +60,7 @@ function App() {
     <div className="App">
       <RouterProvider router={router} />
       <ToastContainer />
-      <Analytics />;
+      <Analytics />
     </div>
   );
 }
